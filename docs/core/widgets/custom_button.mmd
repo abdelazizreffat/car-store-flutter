@@ -1,0 +1,10 @@
+graph TD
+    A[CustomButton Widget] --> B[ElevatedButton]
+    B --> C[ButtonStyle Config]
+    C --> C1[backgroundColor ?? AppColors.primary]
+    C --> C2[minimumSize: minWidth ?? infinity, minHeight ?? 48]
+    C --> C3[disabledBackgroundColor & disabledForegroundColor]
+
+    B --> D{_buildButtonContent Helper Method}
+    D -- isLoading == true --> E[SizedBox 22x22 -> CircularProgressIndicator White]
+    D -- isLoading == false --> F[Text buttonLabel with AppStyles]
